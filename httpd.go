@@ -26,7 +26,7 @@ const notFound string = `
 
 func main() {
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		file := path.Join(".", r.URL.Path)
+		file := path.Join(".", path.Join("www", r.URL.Path))
 		_, err := os.Stat(file)
 		if err == nil {
 			f, err := os.Open(file)
@@ -43,7 +43,7 @@ func main() {
 				}
 			}
 		}
-		nf := []byte(fmt.Sprintf(notFound, strings.TrimLeft(file, ".")))
+		nf := []byte(fmt.Sprintf(notFound, strings.TrimLeft(strings.TrimLeft(file, "www"), "/")))
 		fmt.Printf("[%v] [%v] [%v] - %v\n", time.Now().Format(time.RFC3339), r.Method, "(unknown)", file)
 		w.Write(nf)
 	})
