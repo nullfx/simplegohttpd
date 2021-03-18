@@ -37,7 +37,7 @@ func main() {
 					ext := path.Ext(file)
 					ct := mime.TypeByExtension(ext)
 					w.Header().Add("Content-Type", ct)
-					fmt.Printf("[%v] [%v] [%v] - %v\n", time.Now().Format(time.RFC3339), r.Method, "(unknown)", file)
+					fmt.Printf("[%v] [%v] [%v] - %v\n", time.Now().Format(time.RFC3339), r.Method, ct, file)
 					w.Write(bytes)
 					return
 				}
