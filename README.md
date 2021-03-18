@@ -17,5 +17,5 @@ browse http://localhost:82/index.html or http://localhost/foo
 
 ## Structure
 
-- httpd.go - webserver code. webserver doesn't use any of the built in template functionality (yet. crawl. walk. run. still crawling). wanted to start with a very basic i/o implementation and build from there.
-- www - static html directory. anything placed in this directory will be served if matching the url path.
+- **httpd.go** - webserver code. webserver doesn't use any of the built in template functionality (yet. crawl. walk. run. still crawling). wanted to start with a very basic i/o implementation and build from there.
+- **www** - static html directory. anything placed in this directory will be served if matching the url path.
