@@ -1,4 +1,4 @@
-# simplegohttpd
+# Simple go httpd webserver
 A simple go based http daemon that reads serves file content. 
 This is more of a learning exercise than anything useful.
 
